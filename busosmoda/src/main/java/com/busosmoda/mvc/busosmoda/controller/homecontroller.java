@@ -18,15 +18,15 @@ public class homecontroller {
 		
 		Pedido pedido = new Pedido();
 		
-		pedido.setNombreProducto("Go pro ");
-		pedido.setDescripcion("lo que sea");
-		pedido.setUrlProducto("https://www.amazon.com.br/Console-Nintendo-Switch-OLED-Branco/dp/B098RKWHHZ/ref=sr_1_7?crid=2VZZ14N9FSTZO&keywords=nintendo+switch&qid=1667086131&qu=eyJxc2MiOiI0LjY5IiwicXNhIjoiNC45MyIsInFzcCI6IjMuNjQifQ%3D%3D&sprefix=%2Caps%2C178&sr=8-7&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147");
-		pedido.setUrlImagen("https://m.media-amazon.com/images/I/61dYrzvBLbL._AC_SX679_.jpg");
+		pedido.setNombreProducto("Buso OnePiece");
+		pedido.setDescripcion("Buso Personalizable Color Naranja");
+		pedido.setUrlProducto("https://www.facebook.com/Busos-Moda-972146422836711/photos/pcb.5908917995826171/5908916999159604/");
+		pedido.setUrlImagen("https://scontent.fpei3-1.fna.fbcdn.net/v/t39.30808-6/319637435_5684853598288347_31615585272699136_n.jpg?stp=dst-jpg_p600x600&_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeGmL8MSlLq77Y47aQrzJSw96ziGruChoTHrOIau4KGhMeoeP6Oxd81-aOdgDgW9vZx3vlFMbnScuNrxUUBttmI0&_nc_ohc=e7UiWTlHJp0AX9piOEQ&_nc_ht=scontent.fpei3-1.fna&oh=00_AfBpqJVatu-lnfGJG5Wz6QO-EWkBYNuQG2FtKsNyXZWWQw&oe=63CDE24A");
 		
 		List<Pedido> pedidos = Arrays.asList(pedido);
 		model.addAttribute("pedidos", pedidos);
 		
 		return "home";
 	}
-	}
+}
 
