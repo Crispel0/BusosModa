@@ -3,8 +3,18 @@ package com.busosmoda.mvc.busosmoda.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Pedido {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class Pedido {
+	
+	//the id be automacally autoincrement
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	
 	private String nombreProducto;
 	private BigDecimal valor;
 	private LocalDate fechaDeEntrega;

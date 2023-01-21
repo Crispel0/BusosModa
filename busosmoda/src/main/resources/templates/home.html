@@ -1,51 +1,40 @@
-<html>
-<head>
-<meta charset="UTF-8" />
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-	crossorigin="anonymous">
-</head>
-<style>
-	.bgcolor {
-	-webkit-linear-gradient: (180deg, #f0f, #fff);
-	}
-</style>
-<body>
-	<div class="container">
-		<div class="card" th:each="pedido : ${pedidos}">
-			<div class="card-header" th:text="${pedido.nombreProducto}">Nombre del producto</div>
-			<div class="card-body">
-				<div class="row">
-				<div class="col-12 col-sm-8">
-				<div> Valor: <span th:text="${pedido.valor}">R$1000,00</span> </div>
-					<div>
-						Fecha de entrega: <span th:text="${pedido.fechaDeEntrega}">10/10/2022</span>
-					</div>
-					<div>Producto</div>
-					<div>
-						<input class="form-control mb-1" th:value="${pedido.urlProducto}" value="URL-del-producto" />	
-					</div>
-					<div>Descripcion</div>
-					<div>
-						<textarea class="form-control mb-1" th:text="${pedido.descripcion}">descripcion</textarea>									
-					</div>
-				</div>
-					<div class="col-12 col-sm-4">
-						<div>
-							<img class="img-thumbnail" th:src="${pedido.urlImagen}" src=""/>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container">
+			<div class="card" th:each="pedido : ${pedidos}">
+				<div class="card-header" th:text="${pedido.nombreProducto}">Nombre del producto</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col-12 col-sm-8 mb-3">
+							<div class="row">
+								<div class="col-md-5">Valor: <span th:text="${pedido.valor}">$8000,00</span></div>
+								<div class="col-md-7">Fecha de entrega: <span th:text="${pedido.fechaDeEntrega}">10/10/2022</span></div>
+							</div>
+							
+							
+							<div>Producto</div>
+							<div><input class="form-control" th:value="${pedido.urlProducto}" value="URL del producto"/></div>
+							<div>Descripcion</div>
+							<div>
+								<textarea class="form-control" th:text="${pedido.descripcion}">descripcion</textarea>
+							</div>
 						</div>
+						<div class="col-12 col-sm-4">
+							<div>
+								<img class="img-thumbnail" th:src="${pedido.urlImagen}" src="">
+							</div>
+						</div>
+						
 					</div>
+					
 				</div>
 			</div>
 		</div>
-	</div>
-</body>
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-	crossorigin="anonymous"></script>
+		
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+	</body>
 </html>
-
-
