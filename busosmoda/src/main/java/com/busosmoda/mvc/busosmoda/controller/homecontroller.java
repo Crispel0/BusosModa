@@ -2,18 +2,20 @@ package com.busosmoda.mvc.busosmoda.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.busosmoda.mvc.busosmoda.model.Pedido;
-import com.busosmoda.mvc.busosmoda.repository.PedidosRepository;
+import com.busosmoda.mvc.busosmoda.repository.PedidoRepository;
 
 @Controller
 public class homecontroller {
 	
-	PedidosRepository repository;
+	@Autowired
+	PedidoRepository repository;
 
 	/*toma todos los pedidos y los guarda en una lista
 	de pedidos despues los agrega a el modelo y lo llama pedidos para usarlo en las views*/
@@ -28,7 +30,7 @@ public class homecontroller {
 		*/
 		
 		
-		List<Pedido> pedidos = repository.RecuperaPedidos();
+		List<Pedido> pedidos = repository.findAll();
 		
 		
 		model.addAttribute("pedidos", pedidos);
