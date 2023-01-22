@@ -1,9 +1,11 @@
 package com.busosmoda.mvc.busosmoda.controller;
 
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +27,12 @@ public class ProductoController {
 	}
 	
 	@PostMapping("nuevo")
-	public  String nuevo(ProductoRequestDAO productoDAO) {
+	public  String nuevo(@Valid ProductoRequestDAO productoDAO, BindingResult result) {
+		
+		/* Si la validation contiene un error retornar a formulario*/
+		if(result.hasErrors()) {
+			return "pedido/formulario";
+		}
 		
 	Pedido pedido = productoDAO.toPedido();
 	

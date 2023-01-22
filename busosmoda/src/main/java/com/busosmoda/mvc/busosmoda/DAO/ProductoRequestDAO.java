@@ -1,12 +1,17 @@
 package com.busosmoda.mvc.busosmoda.DAO;
 
+import javax.validation.constraints.NotBlank;
+
 import com.busosmoda.mvc.busosmoda.model.Pedido;
 
 public class ProductoRequestDAO {
-	
+	@NotBlank //I don't allow values in blank
 	private String nombreProducto;
+	@NotBlank
 	private String urlProducto;
+	@NotBlank
 	private String imgProducto;
+	
 	private String descripcion;
 	
 	public String getNombreProducto() {
