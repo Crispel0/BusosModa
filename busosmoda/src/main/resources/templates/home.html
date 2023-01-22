@@ -1,49 +1,67 @@
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8"/>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-	</head>
-	<body>
-		<div class="container">
-		<nav class="navbar navbar-expand-lg bg-purple d-flex justify-content-between">
-		<div class="navbar-nav">
-		<a href="nav-link active">Todos</a>
-		<a href="nav-link">Aprobados</a>
-		<a href="nav-link">Esperando</a>
-		<a href="nav-link">Entregados</a>
+<head>
+<meta charset="UTF-8" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="p-5 card text-bg-secondary rounded-3">
+			<h1 class="display-5 fw-bold">Pedidos</h1>
 		</div>
-		<button class="btn btn-outline-success">Buscar</button>
-		</nav>
-			<div class="card" th:each="pedido : ${pedidos}">
-				<div class="card-header" th:text="${pedido.nombreProducto}">Nombre del producto</div>
-				<div class="card-body">
-					<div class="row">
-						<div class="col-12 col-sm-8 mb-3">
-							<div class="row">
-								<div class="col-md-5">Valor: <span th:text="${pedido.valor}">$8000,00</span></div>
-								<div class="col-md-7">Fecha de entrega: <span th:text="${pedido.fechaDeEntrega}">10/10/2022</span></div>
-							</div>
-							
-							
-							<div>Producto</div>
-							<div><input class="form-control" th:value="${pedido.urlProducto}" value="URL del producto"/></div>
-							<div>Descripcion</div>
-							<div>
-								<textarea class="form-control" th:text="${pedido.descripcion}">descripcion</textarea>
-							</div>
-						</div>
-						<div class="col-12 col-sm-4">
-							<div>
-								<img class="img-thumbnail" th:src="${pedido.urlImagen}" src="">
-							</div>
-						</div>
-						
-					</div>
-					
+		<nav class="navbar navbar-expand-lg bg-purple mb-3">
+			<div class="container-fluid">
+				<div class="navbar-nav">
+					<a href="nav-link active">Todos</a> <a href="nav-link">Aprobados</a>
+					<a href="nav-link">Esperando</a> <a href="nav-link">Entregados</a>
 				</div>
+				<a href="/pedidos/nuevo"><button class="btn btn-outline-primary">Buscar</button></a>
+			</div>
+		</nav>
+		<div class="card" th:each="pedido : ${pedidos}">
+			<div class="card-header" th:text="${pedido.nombreProducto}">Nombre
+				del producto</div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-12 col-sm-8 mb-3">
+						<div class="row">
+							<div class="col-md-5">
+								Valor: <span th:text="${pedido.valor}">$8000,00</span>
+							</div>
+							<div class="col-md-7">
+								Fecha de entrega: <span th:text="${pedido.fechaDeEntrega}">10/10/2022</span>
+							</div>
+						</div>
+
+
+						<div>Producto</div>
+						<div>
+							<input class="form-control" th:value="${pedido.urlProducto}"
+								value="URL del producto" />
+						</div>
+						<div>Descripcion</div>
+						<div>
+							<textarea class="form-control" th:text="${pedido.descripcion}">descripcion</textarea>
+						</div>
+					</div>
+					<div class="col-12 col-sm-4">
+						<div>
+							<img class="img-thumbnail" th:src="${pedido.urlImagen}" src="">
+						</div>
+					</div>
+
+				</div>
+
 			</div>
 		</div>
-		
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-	</body>
+	</div>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+		crossorigin="anonymous"></script>
+</body>
 </html>
