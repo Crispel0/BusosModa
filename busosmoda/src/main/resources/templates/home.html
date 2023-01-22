@@ -6,19 +6,20 @@
 	rel="stylesheet"
 	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
 	crossorigin="anonymous">
+	<title>Pedidos | BusosModa</title>
 </head>
 <body>
 	<div class="container">
 		<div class="p-5 card text-bg-secondary rounded-3">
 			<h1 class="display-5 fw-bold">Pedidos</h1>
 		</div>
-		<nav class="navbar navbar-expand-lg bg-purple mb-3">
+		<nav class="navbar navbar-expand bg-purple mb-3">
 			<div class="container-fluid">
 				<div class="navbar-nav">
 					<a href="nav-link active">Todos</a> <a href="nav-link">Aprobados</a>
 					<a href="nav-link">Esperando</a> <a href="nav-link">Entregados</a>
 				</div>
-				<a href="/pedidos/nuevo"><button class="btn btn-outline-primary">Buscar</button></a>
+				<a href="/pedidos/formulario"><button class="btn btn-outline-primary">Buscar</button></a>
 			</div>
 		</nav>
 		<div class="card" th:each="pedido : ${pedidos}">
