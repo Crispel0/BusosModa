@@ -1,39 +1,43 @@
 <link
+
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
 	crossorigin="anonymous">
-<title>Nuevos Pedidos | BusosModa</title>
+	
+	<title> Nuevos Pedidos | BusosModa</title>
+	
 </head>
+
 <body>
 	<div class="container">
 		<div class="p-5 card text-bg-secondary rounded-3 mb-3">
-			<h1 class="display-5 fw-bold">Nuevos Pedidos | BusosModa</h1>
+			<h1 class="display-5 fw-bold">Nuevos Pedidos</h1>
 		</div>
-		<div>
-			<form action="/pedido/nuevo" method="post">	
+		<div class="card">
+			<form class="card-body" action="/pedido/nuevo" method="post">	
+		<div class="mb-3">
+			<label class="form-label" for="nombreProducto">Producto</label>
+			<input class="form-control" name="nombreProducto" placeholder="escriba el nombre del producto"></input> 
+				<small class="form-text">Escriba el nombre del producto </small>
 		</div>
-		<div>
-			<label for="nombreProducto">Producto</label>
-			<input name="nombreProducto" placeholder="escriba el nombre del producto"></input> 
-				<small>Escriba el nombre del producto </small>
+		<div class="mb-3">
+			<label class="form-label" for="urlProducto">urlProducto</label>
+			<input class="form-control" name="urlProducto" placeholder="escriba la URL de la imagen"></input>
+			<small class="form-text">Escriba la url del producto</small>
 		</div>
-		<div>
-			<label for="urlProducto">urlProducto</label>
-			<input name="urlProducto" placeholder="escriba la URL de la imagen"></input>
-			<small>Escriba la url del producto</small>
+		<div class="mb-3">
+			<label class="form-label" for="imgProducto">urlImagen</label>
+			<input class="form-control" name="imgProducto"placeholder="escriba la URL imagen del producto "></input> 
+			<small class="form-text">Escriba la URL img del producto</small>
 		</div>
-		<div>
-			<label for="imgProducto">urlImagen</label>
-			<input name="imgProducto"placeholder="escriba la URL imagen del producto "></input> 
-			<small>Escriba la URL img del producto</small>
-		</div>
-		<div>
+		<div class="mb-3">
 			<label for="descripcion">Descripcion</label>
 			<textarea name="descripcion" placeholder="escriba una descripcion del producto"></textarea> 
 		</div>
-		<button>Registrar</button>
+		<button class="btn btn-primary">Registrar</button>
 		</form>
+		</div>
 	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
