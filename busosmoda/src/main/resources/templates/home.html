@@ -5,6 +5,15 @@
 	</head>
 	<body>
 		<div class="container">
+		<nav class="navbar navbar-expand-lg bg-purple d-flex justify-content-between">
+		<div class="navbar-nav">
+		<a href="nav-link active">Todos</a>
+		<a href="nav-link">Aprobados</a>
+		<a href="nav-link">Esperando</a>
+		<a href="nav-link">Entregados</a>
+		</div>
+		<button class="btn btn-outline-success">Buscar</button>
+		</nav>
 			<div class="card" th:each="pedido : ${pedidos}">
 				<div class="card-header" th:text="${pedido.nombreProducto}">Nombre del producto</div>
 				<div class="card-body">
