@@ -1,12 +1,11 @@
 <link
-
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
 	crossorigin="anonymous">
-	
-	<title> Nuevos Pedidos | BusosModa</title>
-	
+
+<title>Nuevos Pedidos | BusosModa</title>
+
 </head>
 
 <body>
@@ -15,28 +14,36 @@
 			<h1 class="display-5 fw-bold">Nuevos Pedidos</h1>
 		</div>
 		<div class="card">
-			<form class="card-body" action="/pedido/nuevo" method="post">	
-		<div class="mb-3">
-			<label class="form-label" for="nombreProducto">Producto</label>
-			<input class="form-control" name="nombreProducto" placeholder="escriba el nombre del producto"></input> 
-				<small class="form-text">Escriba el nombre del producto </small>
-		</div>
-		<div class="mb-3">
-			<label class="form-label" for="urlProducto">urlProducto</label>
-			<input class="form-control" name="urlProducto" placeholder="escriba la URL de la imagen"></input>
-			<small class="form-text">Escriba la url del producto</small>
-		</div>
-		<div class="mb-3">
-			<label class="form-label" for="imgProducto">urlImagen</label>
-			<input class="form-control" name="imgProducto"placeholder="escriba la URL imagen del producto "></input> 
-			<small class="form-text">Escriba la URL img del producto</small>
-		</div>
-		<div class="mb-3">
-			<label for="descripcion">Descripcion</label>
-			<textarea name="descripcion" placeholder="escriba una descripcion del producto"></textarea> 
-		</div>
-		<button class="btn btn-primary">Registrar</button>
-		</form>
+			<!-- para que identifique la clase th:object debe ir en camelCase -->
+			<form th:object="${productoRequestDAO}" class="card-body" action="/pedido/nuevo" method="post">
+				<div class="mb-3">
+					<label class="form-label" for="nombreProducto">Producto</label>
+					<!-- el th:field contiene * porque el atributo nombreProducto hace referencia a un atributo del objeto y como es algo que 
+			le pertenece debe ir con * a diferencia de $-->
+					<input th:field=*{nombreProducto} class="form-control" placeholder="escriba el nombre del producto" th:errorclass="is invalid"></input> 
+					<small class="form-text">Escriba el nombre del producto</small>
+						<div class="invalid-feedback" th:errors="*{nombreProducto}">el nombre del producto no debe estar vacio</div>
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="urlProducto">urlProducto</label> <input 
+					th:field=*{urlProducto} class="form-control" th:errorclass="is invalid"
+						placeholder="escriba la URL de la imagen"></input> 
+						<small class="form-text">Escriba la url del producto</small>
+						<div class="invalid-feedback" th:errors="*{urlProducto}">la Url del producto no debe estar vacio</div> <!--  el th.errors indica para lanzar un error en caso de que algo salga mal -->
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="imgProducto">urlImagen</label> <input
+						th:field=*{imgProducto} class="form-control" th:errorclass="is invalid"
+						placeholder="escriba la URL imagen del producto "></input>
+						<small class="form-text">Escriba la URL img del producto</small>
+						<div class="invalid-feedback" th:errors="*{imgProducto}"> la Url de la imagen no debe estar vacia</div>
+				</div>
+				<div class="mb-3">
+					<label for="descripcion">Descripcion</label>
+					<textarea th:field=*{descripcion} placeholder="escriba una descripcion del producto"></textarea>
+				</div>
+				<button class="btn btn-primary">Registrar</button>
+			</form>
 		</div>
 	</div>
 	<script

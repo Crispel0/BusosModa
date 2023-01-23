@@ -22,7 +22,7 @@ public class ProductoController {
 	private PedidoRepository Pedidorepository;
 	
 	@GetMapping("pedido")
-	public String formulario () {
+	public String formulario (ProductoRequestDAO productoDAO) {
 		return "producto/formulario";
 	}
 	
