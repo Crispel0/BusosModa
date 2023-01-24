@@ -23,11 +23,11 @@ public class ProductoController {
 	
 	@GetMapping("pedido")
 	public String formulario (ProductoRequestDAO productoDAO) {
-		return "producto/formulario";
+		return "pedido/formulario";
 	}
 	
 	@PostMapping("nuevo")
-	public  String nuevo(@Valid ProductoRequestDAO productoDAO, BindingResult result) {
+	public String nuevo(@Valid ProductoRequestDAO productoDAO, BindingResult result) {
 		
 		/* Si la validation contiene un error retornar a formulario*/
 		if(result.hasErrors()) {
@@ -38,6 +38,6 @@ public class ProductoController {
 	
 	//Toma la informacion de ProductoDAO y la convierte a pedido basicamente no envia los datos en crudo se utiliza DataAccessObject
 	Pedidorepository.save(pedido);
-		return "producto/formulario";
+		return "pedido/formulario";
 	}
 }
