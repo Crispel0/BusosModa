@@ -5,12 +5,11 @@
 	crossorigin="anonymous">
 
 <title>Nuevos Pedidos | BusosModa</title>
-</head>
+<head th:replace="~{base :: head}"></head>
 <body>
+	<div th:replace="~{base :: logo}"></div>
 	<div class="container">
-		<div class="p-5 card text-bg-secondary rounded-3 mb-3">
-			<h1 class="display-5 fw-bold">Nuevos Pedidos</h1>
-		</div>
+		<div th:replace="~{base :: titulo('Nuevo Pedido', 'mb-3')}"></div>
 		<div class="card">
 			<!-- para que identifique la clase th:object debe ir en camelCase -->
 			<form th:object="${productoRequestDAO}" class="card-body" action="/pedido/nuevo" method="post">

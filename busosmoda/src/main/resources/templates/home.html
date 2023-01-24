@@ -1,51 +1,9 @@
 <html>
-<head>
-<meta charset="UTF-8" />
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-	crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
-	rel="stylesheet">
-	
-<title>Pedidos | BusosModa</title>
-<style type="text/css">
-
-body {
-	background: linear-gradient(#f0f, #fff);
-}
-
-.logo-container {
-	color: #000000;
-	background: #fff;
-	
-}
-
-.navbar-nav a {
-	color: #ffff;
-	font-size: 18px;
-}
-
-.container h1{
-	font-family: 'Poppins', sans-serif;
-
-}
-</style>
-</head>
+<head th:replace="~{base :: head}"></head>
 <body>
-	<div
-		class="logo-container container-fluid d-flex justify-content-between mb-3 p-3">
-		<img src="../static/BusosModa.png" alt="logo busosmoda"> <span>BusosModa</span>
-		<span>login</span>
-	</div>
+	<div th:replace="~{base :: logo}"></div>
 	<div class="container">
-		<div class="p-5 card text-bg-secondary rounded-3">
-			<h1 class="display-5 fw-bold">Pedidos</h1>
-		</div>
+		<div th:replace="~{base :: titulo('Pedidos', 'mb-0')}"></div>
 		<nav class="navbar navbar-expand bg-purple mb-3">
 			<div class="container-fluid d-flex justify-content-between">
 				<div class="navbar-nav">
