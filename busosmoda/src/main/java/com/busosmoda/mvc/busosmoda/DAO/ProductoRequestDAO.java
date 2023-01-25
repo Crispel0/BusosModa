@@ -5,6 +5,7 @@ package com.busosmoda.mvc.busosmoda.DAO;
 import javax.validation.constraints.NotBlank;
 
 import com.busosmoda.mvc.busosmoda.model.Pedido;
+import com.busosmoda.mvc.busosmoda.model.StatusPedido;
 
 public class ProductoRequestDAO {
 	@NotBlank //I don't allow values in blank and values empty
@@ -15,6 +16,7 @@ public class ProductoRequestDAO {
 	private String imgProducto;
 	@NotBlank
 	private String descripcion;
+	
 	
 	public String getNombreProducto() {
 		return nombreProducto;
@@ -47,6 +49,8 @@ public class ProductoRequestDAO {
 		pedido.setUrlProducto(urlProducto);
 		pedido.setUrlImagen(imgProducto);
 		pedido.setDescripcion(descripcion);
+		/* Automacally when we are register a new consult have a status Esperando*/
+		pedido.setStatus(StatusPedido.ESPERANDO);
 		return pedido;
 	}
 	
