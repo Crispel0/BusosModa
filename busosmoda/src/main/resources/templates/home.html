@@ -19,23 +19,19 @@
 		<div class="card mb-3 " th:each="pedido : ${pedidos}">
 		
 		<th:block th:switch= "${pedido.status.name()}">
-		<div th:case="'ESPERANDO'" class="card-header text-bg-warning" th:text="${pedido.nombreProducto}">Nombre
-				del producto</div>
-				<div th:case="'APROBADO'" class="card-header text-bg-success" th:text="${pedido.nombreProducto}">Nombre
-				del producto</div>
-				<div th:case="'TERMINADO'" class="card-header text-bg-dark" th:text="${pedido.nombreProducto}">Nombre
-				del producto</div>
-				
+				<div th:case="'ESPERANDO'" class="card-header text-bg-warning" th:text="${pedido.nombreProducto}">Nombre del producto</div>
+				<div th:case="'APROBADO'" class="card-header text-bg-success" th:text="${pedido.nombreProducto}">Nombre del producto</div>
+				<div th:case="'TERMINADO'" class="card-header text-bg-dark" th:text="${pedido.nombreProducto}">Nombre del producto</div>
 		</th:block>
 			<div class="card-body">
 				<div class="row">
 					<div class="col-12 col-sm-8 mb-3">
 						<div class="row">
-							<div class="col-md-5">
-								Valor: <span th:text="${pedido.valor}">$8000,00</span>
+							<div class="col-md-5"> <!--  Here is necessary make a format for each three point separated for a doc and for 2 spaces comma-->
+								Valor: <span th:if="${pedido.valor} != null" th:text="${'$'+#numbers.formatDecimal(pedido.valor,3,'POINT',2,'COMMA')}"></span>
 							</div>
 							<div class="col-md-7">
-								Fecha de entrega: <span th:text="${pedido.fechaDeEntrega}">10/10/2022</span>
+								Fecha de entrega: <span th:text="${#temporals.format(pedido.fechaDeEntrega, 'dd/MM/yyyy')}"></span>
 							</div>
 						</div>
 
