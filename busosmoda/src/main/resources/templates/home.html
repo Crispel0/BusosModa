@@ -7,9 +7,10 @@
 		<nav class="navbar navbar-expand bg-purple mb-3">
 			<div class="container-fluid d-flex justify-content-between">
 				<div class="navbar-nav">
-					<a class="nav-link active" href="#">Todos</a> <a class="nav-link"
-						href="#">Aprobados</a> <a class="nav-link" href="#">Esperando</a>
-					<a class="nav-link" href="#">Entregados</a>
+					<a th:classappend ="${status} == null ? 'active'" href="/home">Todos</a> 
+					<a th:classappend ="${status} == 'Aprobado' ? 'active'" class="nav-link" href="/home/aprobado">Aprobados</a> 
+					<a th:classappend ="${status} == 'Esperando' ? 'active'" class="nav-link" href="/home/esperando">Esperando</a>
+					<a th:classappend ="${status} == 'Terminado' ? 'active'" class="nav-link" href="/home/terminado">Entregados</a>
 				</div>
 				<a href="/pedido/formulario"><button
 						class="btn btn-outline-primary">Nuevo</button></a>
@@ -17,7 +18,7 @@
 		</nav>
 		<div class="card mb-3 " th:each="pedido : ${pedidos}">
 		
-		<th:block th:switch="${Pedido.status.name()}">
+		<th:block th:switch= "${pedido.status.name()}">
 		<div th:case="'ESPERANDO'" class="card-header text-bg-warning" th:text="${pedido.nombreProducto}">Nombre
 				del producto</div>
 				<div th:case="'APROBADO'" class="card-header text-bg-success" th:text="${pedido.nombreProducto}">Nombre
