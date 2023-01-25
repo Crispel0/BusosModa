@@ -17,7 +17,7 @@
 		</nav>
 		<div class="card mb-3 " th:each="pedido : ${pedidos}">
 		
-		<th:block th:switch="${pedido.status.name()}">
+		<th:block th:switch="${Pedido.status.name()}">
 		<div th:case="'ESPERANDO'" class="card-header text-bg-warning" th:text="${pedido.nombreProducto}">Nombre
 				del producto</div>
 				<div th:case="'APROBADO'" class="card-header text-bg-success" th:text="${pedido.nombreProducto}">Nombre

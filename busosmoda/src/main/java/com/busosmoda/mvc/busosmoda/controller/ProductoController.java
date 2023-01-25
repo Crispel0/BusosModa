@@ -38,6 +38,6 @@ public class ProductoController {
 	
 	//Toma la informacion de ProductoDAO y la convierte a pedido basicamente no envia los datos en crudo se utiliza DataAccessObject
 	Pedidorepository.save(pedido);
-		return "pedido/formulario";
+		return "redirect:/home";
 	}
 }
