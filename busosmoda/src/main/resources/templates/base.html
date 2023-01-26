@@ -10,35 +10,13 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
 	rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/base.css}">
 	
 <title>Pedidos | BusosModa</title>
-<style type="text/css">
-
-body {
-
-	font-family: 'Poppins', sans-serif;
-}
-
-.logo-container {
-	color: #000000;
-	background: #fff;
-	
-}
-
-.navbar-nav a {
-	color: #ffff;
-	font-size: 18px;
-}
-
-.container h1{
-	font-family: 'Poppins', sans-serif;
-
-}
-</style>
 </head>
 
 <div th:fragment="logo"	class="logo-container container-fluid d-flex justify-content-between mb-3 p-3">
-		<img src="../static/BusosModa.png" alt="logo busosmoda"> <span>BusosModa</span>
+		<img th:src="@{/img/BusosModa.png}" alt="logo busosmoda"> <span>BusosModa</span>
 		<span>login</span>
 </div>
 
