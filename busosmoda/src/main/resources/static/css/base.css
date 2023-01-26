@@ -1,0 +1,20 @@
+body {
+
+	font-family: 'Poppins', sans-serif;
+}
+
+.logo-container {
+	color: #000000;
+	background: #fff;
+	
+}
+
+.navbar-nav a {
+	color: #ffff;
+	font-size: 18px;
+}
+
+.container h1{
+	font-family: 'Poppins', sans-serif;
+
+}
