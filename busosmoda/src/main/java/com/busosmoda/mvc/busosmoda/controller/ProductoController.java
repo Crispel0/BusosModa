@@ -21,8 +21,8 @@ public class ProductoController {
 	@Autowired
 	private PedidoRepository Pedidorepository;
 	
-	@GetMapping("pedido")
-	public String formulario (ProductoRequestDAO productoDAO) {
+	@GetMapping("formulario")
+	public String formulario(ProductoRequestDAO request) {
 		return "pedido/formulario";
 	}
 	

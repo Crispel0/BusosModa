@@ -18,21 +18,21 @@
 					<label class="form-label" for="nombreProducto">Producto</label>
 					<!-- el th:field contiene * porque el atributo nombreProducto hace referencia a un atributo del objeto y como es algo que 
 			le pertenece debe ir con * a diferencia de $-->
-					<input th:field=*{nombreProducto} class="form-control" placeholder="escriba el nombre del producto" th:errorclass="is invalid"></input> 
+					<input th:field=*{nombreProducto} class="form-control" placeholder="escriba el nombre del producto" th:errorclass="is-invalid"></input> 
 					<small class="form-text">Escriba el nombre del producto</small>
 						<div class="invalid-feedback" th:errors="*{nombreProducto}">el nombre del producto no debe estar vacio</div>
 				</div>
 				
 				<div class="mb-3">
 					<label class="form-label" for="urlProducto">urlProducto</label> <input 
-					th:field=*{urlProducto} class="form-control" th:errorclass="is invalid"
+					th:field=*{urlProducto} class="form-control" th:errorclass="is-invalid"
 						placeholder="escriba la URL de la imagen"></input> 
 						<small class="form-text">Escriba la url del producto</small>
 						<div class="invalid-feedback" th:errors="*{urlProducto}">la Url del producto no debe estar vacio</div> <!--  el th.errors indica para lanzar un error en caso de que algo salga mal -->
 				</div>
 				<div class="mb-3">
 					<label class="form-label" for="imgProducto">urlImagen</label> <input
-						th:field=*{imgProducto} class="form-control" th:errorclass="is invalid"
+						th:field=*{imgProducto} class="form-control" th:errorclass="is-invalid"
 						placeholder="escriba la URL imagen del producto "></input>
 						<small class="form-text">Escriba la URL img del producto</small>
 						<div class="invalid-feedback" th:errors="*{imgProducto}"> la Url de la imagen no debe estar vacia</div>
