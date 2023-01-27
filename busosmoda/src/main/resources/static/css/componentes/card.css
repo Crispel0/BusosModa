@@ -1,0 +1,89 @@
+@import url(header.css);
+.card {
+  background-color: var(-contrast-light-color);
+  border-radius: 10px;
+  box-shadow: var(-shadow);
+  width: 100%;
+  max-width: 45rem;
+  padding: 1.75rem;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.card__title {
+  font-size: var(-font-size-card-title);
+  margin-bottom: 1rem;
+}
+
+.productos{
+  width: 940px;
+  margin: 0 auto;
+  padding: 30px;
+  
+}
+
+
+.productos li{
+  display: inline-block;
+  text-align: center;
+  width: 30%;
+  vertical-align: top;
+  margin: 0 1.5%;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  border: 2px solid #000000;
+  border-radius: 10px;
+}
+
+.productos li img{
+  margin: 30px 0px;
+  height: 220px;
+  width: auto;
+}
+
+.productos li:hover{
+  border-color:#000000;
+}
+
+.productos li:active{
+  border-color: rgb(0, 255, 98);
+}
+
+.productos h2{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.productos li:hover h2{
+  font-size: 33px;
+}
+
+.producto-descripcion {
+  font-size: 18px;
+}
+
+.producto-descripcion:hover
+{
+  font-size: 20px;
+}
+
+ @media screen and (min-width: 0) { /* Pantalla Movil*/
+  .productos li{
+    margin-top: 25px;
+    margin-right: 4px;
+      display: block; /* Se mostrara de forma de columna "vertical" hacia abajo para pantallas de 0 a 768 px*/
+  } 
+  .header__link{
+    margin-left: 1rem
+  }
+}
+
+
+@media screen and (min-width: 768px) { /* Pantalla Tablet*/
+  .productos li{
+    position: relative;
+      display: inline-block; /* Se mostrara de forma de fila "horizontal" hacia al lado para pantallas de 768 px en adelnate*/
+} 
+}
+
+

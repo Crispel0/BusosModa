@@ -1,0 +1,22 @@
+.header__ {
+  background-color: var(-contrast-light-color);
+  border-radius: 0 0 10px 10px;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8.75rem;
+  margin-bottom: 2rem;
+}
+
+.header__logo {
+  width: 7rem;
+}
+
+.header__list-nav {
+  display: flex;
+}
+
+.header__link {
+  margin-left: 2rem;
+}
