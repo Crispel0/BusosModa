@@ -51,6 +51,7 @@ public class ProductoRequestDAO {
 		pedido.setDescripcion(descripcion);
 		/* Automacally when we are register a new consult have a status Esperando*/
 		pedido.setStatus(StatusPedido.ESPERANDO);
+		System.out.println(pedido);
 		return pedido;
 	}
 	

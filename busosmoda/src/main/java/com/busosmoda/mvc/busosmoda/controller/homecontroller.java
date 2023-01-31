@@ -4,9 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
 import org.springframework.ui.Model;
-import org.springframework.util.ErrorHandler;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,8 +18,12 @@ import com.busosmoda.mvc.busosmoda.repository.PedidoRepository;
 @RequestMapping("/home")
 public class homecontroller {
 	
+	
+		
 	@Autowired
 	PedidoRepository repository;
+	
+	
 
 	/*toma todos los pedidos y los guarda en una lista
 	de pedidos despues los agrega a el modelo y lo llama pedidos para usarlo en las views*/
@@ -31,6 +33,8 @@ public class homecontroller {
 		
 		List<Pedido> pedidos = repository.findAll();
 		model.addAttribute("pedidos",pedidos);
+		
+		
 		return "home";
 	}
 	
@@ -47,9 +51,12 @@ public class homecontroller {
 		
 		model.addAttribute("pedidos", pedidos);
 		model.addAttribute("status", status);
+		System.out.println(pedidos);
+
 		
 		return "home";
 	}
+	
 	
 	/*En el momento de escribir cualquier otra direccion URL de las especificadas automaticamente redirige a la home porque
 	salta la exception IllegalArgumentExcepion*/
@@ -58,6 +65,11 @@ public class homecontroller {
 		
 		return "redirect:/home";
 	}
+	
+	
 }
+
+
+
 
 

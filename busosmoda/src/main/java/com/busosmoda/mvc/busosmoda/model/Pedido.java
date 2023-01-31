@@ -84,6 +84,11 @@ public class Pedido {
 		this.urlImagen = urlImagen;
 	}
 	
+	@Override
+	public String toString() {
+		return getStatus().toString();
+	}
+	
 	
 	
 	

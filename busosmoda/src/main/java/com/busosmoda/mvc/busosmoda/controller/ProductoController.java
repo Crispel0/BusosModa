@@ -6,6 +6,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,6 +39,12 @@ public class ProductoController {
 	
 	//Toma la informacion de ProductoDAO y la convierte a pedido basicamente no envia los datos en crudo se utiliza DataAccessObject
 	Pedidorepository.save(pedido);
+		return "redirect:/home";
+	}
+	
+	@ExceptionHandler(IllegalArgumentException.class)
+	public String Error() {
+		
 		return "redirect:/home";
 	}
 }
