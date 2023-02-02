@@ -3,17 +3,20 @@ package com.busosmoda.mvc.busosmoda.DAO;
 
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 import com.busosmoda.mvc.busosmoda.model.Pedido;
 import com.busosmoda.mvc.busosmoda.model.StatusPedido;
 
 public class ProductoRequestDAO {
+	
 	@NotBlank //I don't allow values in blank and values empty
 	private String nombreProducto;
 	@NotBlank
 	private String urlProducto;
 	@NotBlank
 	private String imgProducto;
+	@NotEmpty(message = "{descripcion.notempty}") //n't allow a message empty afeter of send a acquisition request
 	@NotBlank
 	private String descripcion;
 	

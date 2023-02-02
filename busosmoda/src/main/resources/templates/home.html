@@ -20,7 +20,7 @@
 	    <th:block th:switch="${pedido.status.name()}">
 		    <div th:case="'ESPERANDO'" class="card-header text-bg-warning" th:text="${pedido.nombreProducto}">Nombre del producto</div>
 		    <div th:case="'APROBADO'" class="card-header text-bg-success" th:text="${pedido.nombreProducto}">Nombre del producto</div>
-		    <div th:case="'TERMINADO'" class="card-header text-bg-dark" th:text="${pedido.nombreProducto}">Nombre del producto</div>
+		    <div th:case="'ENTREGADO'" class="card-header text-bg-dark" th:text="${pedido.nombreProducto}">Nombre del producto</div>
 		</th:block>
 
 			<div class="card-body mb-3">
