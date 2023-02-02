@@ -6,9 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Entity
-public class Peticiones {
+public class Peticion {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -16,6 +17,7 @@ public class Peticiones {
 	private  LocalDate fechaSolicitud;
 	private int numeroTelefonico;
 	private String cuidad;
+	@Size(min=1, max=240)
 	private String peticion;
 	
 	public LocalDate getFechaSolicitud() {

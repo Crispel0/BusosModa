@@ -6,11 +6,11 @@
     <title>Registrar Peticion</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
-    
-    <link rel="stylesheet" href="../static/css/base.css"/>
-    <link rel="stylesheet" href="../static/css/componentes/card.css" />
-    <link rel="stylesheet" href="../static/css/componentes/inputs.css" />
-    <link rel="stylesheet" href="../static/css/componentes/button.css" />
+
+    <link rel="stylesheet" type="text/css" href="../static/css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/componentes/card.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/componentes/inputs.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/componentes/button.css" />
 </head>
 <body>
     <main class="container flex flex--column flex--center">
@@ -18,14 +18,16 @@
             <img src="../static/img/BusosModa.png" width="auto" height="200px" alt ="Logo BusosModa" class="cabecalho__logo">
             <h1 class="registry-header__title">BusosModa</h1>
         </div>
-        <section class="card">
+        <div class="card mb-3 " th:each="pedido : ${pedidos}">
+        
+        	<section class="card">
             <h2 class="card__title">Completa tu Peticion</h2>
-            <form method="post" action="peticion_concluida.html" class="form flex flex--column">
+            <form method="post" action="home/peticiones" class="form flex flex--column">
                 <fieldset>
                     <legend class="form__label">Información básica</legend>
                     <div class="input-container">
-                        <input name="name" id="name" class="input" type="text" placeholder="Nombre" required data-tipo="nombre">
-                        <label class="input-label" for="name">Nombre</label>
+                        <input name="name" th:value="${pedido.urlProducto}" value="URL del producto" class="input" placeholder="Nombre" required data-tipo="nombre">
+                        <label class="input-label" >Nombre</label>
                         <span class="input-message-error">Este campo no es valido</span>
                     </div>
                     <div class="input-container">
@@ -55,8 +57,9 @@
                     <div class="input-container"></div>
                         <textarea class="input_container__textarea" cols="70" rows="10" placeholder="Escriba su peticion aqui" required></textarea>
                         <span class="input-message-error">Este campo no es valido</span>
-                    </div>
+              		</div>
                 </fieldset>
+            </div>
                 <button class="button" >Registrar Peticion</a>
             </form>
         </section>
