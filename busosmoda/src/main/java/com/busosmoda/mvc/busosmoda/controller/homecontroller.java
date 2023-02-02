@@ -8,11 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.busosmoda.mvc.busosmoda.model.Pedido;
+import com.busosmoda.mvc.busosmoda.model.Peticion;
 import com.busosmoda.mvc.busosmoda.model.StatusPedido;
 import com.busosmoda.mvc.busosmoda.repository.PedidoRepository;
+import com.busosmoda.mvc.busosmoda.repository.PeticionesRepository;
 
 @Controller
 @RequestMapping("/home")
@@ -22,6 +25,8 @@ public class homecontroller {
 		
 	@Autowired
 	PedidoRepository repository;
+	@Autowired
+	PeticionesRepository repositoryPedidos;
 	
 	
 
@@ -34,6 +39,14 @@ public class homecontroller {
 		List<Pedido> pedidos = repository.findAll();
 		model.addAttribute("pedidos",pedidos);
 		
+		
+		return "home";
+	}
+	//search all the petitions for JpaRepository and after return to Url Principal
+	@PostMapping("/peticiones")
+	public String peticiones (Model model) {
+		List<Peticion> peticiones = repositoryPedidos.findAll();
+		model.addAttribute("peticion", peticiones);
 		
 		return "home";
 	}
